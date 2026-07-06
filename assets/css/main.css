@@ -1,0 +1,92 @@
+/* ==========================================
+   PORTFOLIO V2.0
+   Main Design System
+========================================== */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+/* CSS Variables */
+
+:root{
+
+    --bg-primary:#050816;
+    --bg-secondary:#0F172A;
+
+    --accent-blue:#3B82F6;
+    --accent-cyan:#22D3EE;
+
+    --text-primary:#F8FAFC;
+    --text-secondary:#94A3B8;
+
+    --glass:rgba(255,255,255,.05);
+    --border:rgba(255,255,255,.08);
+
+    --shadow:0 20px 60px rgba(0,0,0,.35);
+
+    --radius:20px;
+
+    --transition:.35s ease;
+
+    --max-width:1280px;
+
+}
+
+/* Reset */
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Inter',sans-serif;
+    background:var(--bg-primary);
+    color:var(--text-primary);
+    overflow-x:hidden;
+
+}
+
+h1,h2,h3,h4,h5{
+
+    font-family:'Poppins',sans-serif;
+
+}
+
+img{
+
+    display:block;
+    max-width:100%;
+
+}
+
+a{
+
+    color:inherit;
+    text-decoration:none;
+
+}
+
+button{
+
+    font:inherit;
+    cursor:pointer;
+    border:none;
+}
+
+section{
+
+    width:min(92%,var(--max-width));
+    margin:auto;
+
+}
