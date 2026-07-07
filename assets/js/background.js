@@ -45,9 +45,8 @@ class Particle {
 
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
 
-        ctx.shadowBlur = 12;
-        ctx.shadowColor = "#58A6FF";
-        ctx.fillStyle = "rgba(255,255,255,.75)";
+        ctx.shadowBlur = 0;
+        ctx.fillStyle = "rgba(255,255,255,.6)";
 
         ctx.fill();
 
@@ -55,7 +54,7 @@ class Particle {
 
 }
 
-for (let i = 0; i < 140; i++) {
+for (let i = 0; i < 60; i++) {
 
     particles.push(new Particle());
 
@@ -72,13 +71,13 @@ function connect() {
 
             const distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < 140) {
+            if (distance < 90) {
 
                 ctx.beginPath();
 
-                ctx.strokeStyle = `rgba(120,190,255,${1-distance/140})`;
+                ctx.strokeStyle = `rgba(120,190,255,${1-distance/90})`;
 
-                ctx.lineWidth = 1.3;
+                ctx.lineWidth = 0.8;
 
                 ctx.moveTo(particles[a].x, particles[a].y);
 
