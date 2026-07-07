@@ -65,3 +65,99 @@
     }
 
 }
+
+@keyframes pulse{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        opacity:.5;
+
+    }
+
+    50%{
+
+        transform:scale(1.15);
+
+        opacity:1;
+
+    }
+
+}
+
+.typing-dots{
+
+    display:flex;
+
+    gap:6px;
+
+    align-items:center;
+
+}
+
+.typing-dots span{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:typing .8s infinite alternate;
+
+}
+
+.typing-dots span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.typing-dots span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+@keyframes typing{
+
+    from{
+
+        opacity:.3;
+
+        transform:translateY(0);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(-5px);
+
+    }
+
+}
+
+@keyframes orbPulse{
+
+    0%,100%{
+
+        transform:scale(1);
+
+        filter:brightness(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.25);
+
+        filter:brightness(1.4);
+
+    }
+
+}

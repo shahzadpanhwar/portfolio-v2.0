@@ -21,15 +21,26 @@ document.addEventListener("click", (e) => {
 
 function addMessage(text, type = "bot") {
 
-    const div = document.createElement("div");
+    const message = document.createElement("div");
 
-    div.className = `ai-message ${type}`;
+    message.className = `message ${type}`;
 
-    div.innerHTML = text;
+    message.innerHTML = `
 
-    messages.appendChild(div);
+        <div class="avatar">
+            ${type === "bot" ? "🤖" : "👤"}
+        </div>
+
+        <div class="bubble">
+            ${text}
+        </div>
+
+    `;
+
+    messages.appendChild(message);
 
     messages.scrollTop = messages.scrollHeight;
+
 }
 
 function showTyping() {
@@ -38,7 +49,13 @@ function showTyping() {
 
     typing.className = "ai-message bot typing";
 
-    typing.innerHTML = "Shahzad AI is typing...";
+    typing.innerHTML = `
+<div class="typing-dots">
+<span></span>
+<span></span>
+<span></span>
+</div>
+`;
 
     messages.appendChild(typing);
 
