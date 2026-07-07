@@ -26,20 +26,51 @@ function addMessage(text, type = "bot") {
     message.className = `message ${type}`;
 
     message.innerHTML = `
-
         <div class="avatar">
             ${type === "bot" ? "🤖" : "👤"}
         </div>
 
-        <div class="bubble">
-            ${text}
-        </div>
-
+        <div class="bubble"></div>
     `;
 
     messages.appendChild(message);
 
     messages.scrollTop = messages.scrollHeight;
+
+    const bubble = message.querySelector(".bubble");
+
+    if (type === "user") {
+
+        bubble.textContent = text;
+        return;
+
+    }
+
+    streamText(bubble, text);
+
+}
+
+function streamText(element, text) {
+
+    let index = 0;
+
+    function type() {
+
+        if (index < text.length) {
+
+            element.textContent += text.charAt(index);
+
+            index++;
+
+            messages.scrollTop = messages.scrollHeight;
+
+            setTimeout(type, 12);
+
+        }
+
+    }
+
+    type();
 
 }
 
