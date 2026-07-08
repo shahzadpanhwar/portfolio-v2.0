@@ -102,3 +102,35 @@ document.addEventListener("mousemove", (e) => {
     }
 
 });
+
+const menuBtn = document.querySelector(".menu-toggle");
+const sidebar = document.querySelector(".sidebar");
+const overlay = document.querySelector(".sidebar-overlay");
+
+menuBtn.addEventListener("click", () => {
+
+    sidebar.classList.toggle("active");
+    overlay.classList.toggle("active");
+    menuBtn.classList.toggle("active");
+
+});
+
+overlay.addEventListener("click", () => {
+
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+    menuBtn.classList.remove("active");
+
+});
+
+document.querySelectorAll(".sidebar a").forEach(link=>{
+
+    link.addEventListener("click",()=>{
+
+        sidebar.classList.remove("active");
+        overlay.classList.remove("active");
+        menuBtn.classList.remove("active");
+
+    });
+
+});
